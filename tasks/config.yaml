@@ -1,0 +1,1032 @@
+
+scene_setup:
+  base_pose: [0.5, 0, 0.01]
+tasks:
+  ###################################################flat object ##########################
+  a01:
+    task_class: "single_obj"
+    instruction: "pick up the cracker box"
+    objects:
+      - name: "003_cracker_box"
+        object_path: "models/objects_MG/003_cracker_box/003_cracker_box.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 1.0, 0.0]
+        
+  a02:
+    task_class: "single_obj"
+    description: "Single object manipulation - bowl"
+    instruction: "pick up the upside down bowl"
+    objects:
+      - name: "024_bowl"
+        object_path: "models/objects_MG/024_bowl/024_bowl.usd"
+        pos: [0.0, 0.0, 0.02]
+        rot: [0.0, 0.0, 1.0, 0.0]
+
+  a03:
+    task_class: "single_obj"
+    instruction: "pick up the DVD "
+    objects:
+      - name: "Beyonc_Life_is_But_a_Dream_DVD"
+        object_path: "models/objects_MG/Beyonc_Life_is_But_a_Dream_DVD/Beyonc_Life_is_But_a_Dream_DVD.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  a04:
+    task_class: "single_obj"
+    instruction: "pick up the sushimat"
+    objects:
+      - name: "Sushi_Mat"
+        object_path: "models/objects_MG/Sushi_Mat/Sushi_Mat.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  a05:
+    task_class: "single_obj"
+    description: "Single object manipulation - hat"
+    instruction: "pick up the hat"
+    objects:
+      - name: "DPC_tropical_Trends_Hat"
+        object_path: "models/objects_MG/DPC_tropical_Trends_Hat/DPC_tropical_Trends_Hat.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  a06:
+    task_class: "balance"
+    object_name: "square_plate"
+    instruction: " pick up the plate"
+    instruction_2: " pick up the plate at the edge"
+    instruction_3: " pick up the plate with the food" # keep the plate's orientation and  pick up 
+    objects:
+      - name: "Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring"
+        object_path: "models/objects_MG/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "base"
+
+  a07:
+    task_class: "single_obj"
+    instruction: "pick up the box"
+    objects:
+      - name: "Vans_Cereal_Honey_Nut_Crunch_11_oz_box"
+        object_path: "models/objects_MG/Vans_Cereal_Honey_Nut_Crunch_11_oz_box/Vans_Cereal_Honey_Nut_Crunch_11_oz_box.usd"
+        pos: [-0.15, 0.0, 0.0]
+        # rot: [1.0, 0.0, 0.0, 0.0]
+        rot: [0.5, 0.5, 0.5, 0.5]
+
+  a08:
+    task_class: "single_obj"
+    instruction: "pick up the nintendo DVD"
+    objects:
+      - name: "Animal_Crossing_New_Leaf_Nintendo_3DS_Game"
+        object_path: "models/objects_MG/Animal_Crossing_New_Leaf_Nintendo_3DS_Game/Animal_Crossing_New_Leaf_Nintendo_3DS_Game.usd"
+        # pos: [-0.15, 0.1, 0.0]
+        pos: [0.0, -0.05, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  a09:
+    task_class: "balance"
+    object_name: "plate"
+    description: "plate cannot keep balance "
+    scene_type: "simple_table"
+    objects:
+      - name: "Ecoforms_Plant_Plate_S11Turquoise"
+        object_path: "models/objects_MG/Ecoforms_Plant_Plate_S11Turquoise/Ecoforms_Plant_Plate_S11Turquoise.usd"
+        pos: [0.00, 0.00, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  ##################### stack object #########################
+  b01:
+    task_class: "stack"
+    instruction: "pick up craker box from stacked boxes"
+    objects:
+      - name: "003_cracker_box"
+        object_path: "models/objects_MG/003_cracker_box/003_cracker_box.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 1.0, 0.0, 0.0]
+    diff: [0.08, 0.0, 0.0]
+  b02:
+    task_class: "stack"
+    instruction: "pick up the top DVD"
+    objects:
+      - name: "Beyonc_Life_is_But_a_Dream_DVD"
+        object_path: "models/objects_MG/Beyonc_Life_is_But_a_Dream_DVD/Beyonc_Life_is_But_a_Dream_DVD.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+
+  b03:
+    task_class: "stack"
+    instruction: " pick up the top bowl"
+    objects:
+      - name: "024_bowl"
+        object_path: "models/objects_MG/024_bowl/024_bowl.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+
+  b04:
+    task_class: "stack"
+    instruction: " pick up the top plate"
+    objects:
+      - name: "Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring"
+        object_path: "models/objects_MG/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+  
+  b05:
+    task_class: "stack"
+    instruction: " pick up the top tray"
+    objects:
+      - name: "Threshold_Tray_Rectangle_Porcelain"
+        object_path: "models/objects_MG/Threshold_Tray_Rectangle_Porcelain/Threshold_Tray_Rectangle_Porcelain.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+
+  b06:
+    task_class: "stack"
+    instruction: "pick up the leftmost Parchment sheet box"
+    objects:
+      - name: "Wilton_PreCut_Parchment_Sheets_10_x_15_24_sheets"
+        object_path: "models/objects_MG/Wilton_PreCut_Parchment_Sheets_10_x_15_24_sheets/Wilton_PreCut_Parchment_Sheets_10_x_15_24_sheets.usd"
+        pos: [0.03, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.00, 0.05, 0.00]
+
+
+  b08:
+    task_class: "stack"
+    instruction: "grasp the box from stacked boxes"
+    objects:
+      - name: "Nestle_Carnation_Cinnamon_Coffeecake_Kit_1913OZ"
+        object_path: "models/objects_MG/Nestle_Carnation_Cinnamon_Coffeecake_Kit_1913OZ/Nestle_Carnation_Cinnamon_Coffeecake_Kit_1913OZ.usd"
+        pos: [0.0, 0.08, 0.05]
+        rot: [0.5, 0.5, -0.5, 0.5]
+    diff: [0.07, 0.0, 0.0]
+
+  b09:
+    task_class: "stack"
+    instruction: "grasp the box from stacked boxes"
+    objects:
+      - name: "Vans_Cereal_Honey_Nut_Crunch_11_oz_box"
+        object_path: "models/objects_MG/Vans_Cereal_Honey_Nut_Crunch_11_oz_box/Vans_Cereal_Honey_Nut_Crunch_11_oz_box.usd"
+        pos: [0.0, 0.1, 0.05]
+        rot: [0.5, 0.5, -0.5, 0.5]
+    diff: [0.05, 0.0, 0.00]
+
+################## scatter object ##########################
+
+  c01:
+    task_class: "single_obj"
+    instruction: "pick up the banana"
+    objects:
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0, 0, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "006_mustard_bottle"
+        object_path: "models/objects_MG/006_mustard_bottle/006_mustard_bottle.usd"
+        pos: [0.08, 0.03, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "008_pudding_box"
+        object_path: "models/objects_MG/Now_Designs_Bowl_Akita_Black/Now_Designs_Bowl_Akita_Black.usd"
+        pos: [-0.06, -0.05, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  c02:
+    task_class: "single_obj"
+    instruction: "pick up the banana from the clutter"
+    objects:
+      - name: "037_scissors"
+        object_path: "models/objects_MG/037_scissors/037_scissors.usd"
+        pos: [0.08, 0.08, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "008_pudding_box"
+        object_path: "models/objects_MG/008_pudding_box/008_pudding_box.usd"
+        pos: [-0.2, -0.2, 0.04]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "3M_Antislip_Surfacing_Light_Duty_White.usd"
+        object_path: "models/objects_MG/3M_Antislip_Surfacing_Light_Duty_White/3M_Antislip_Surfacing_Light_Duty_White.usd"
+        pos: [0, 0, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0, 0, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  c03:
+    task_class: "single_obj"
+    instruction: "pick up the banana from the clutter"
+    objects:
+      - name: "Nestle_Nesquik_Chocolate_Powder_Flavored_Milk_Additive_109_Oz_Canister"
+        object_path: "models/objects_MG/Nestle_Nesquik_Chocolate_Powder_Flavored_Milk_Additive_109_Oz_Canister/Nestle_Nesquik_Chocolate_Powder_Flavored_Milk_Additive_109_Oz_Canister.usd"
+        pos: [0.15, 0.15, 0.05]
+        rot: [1.0, 0.0, 1.0, 0.0]
+
+      - name: "008_pudding_box.usd"
+        object_path: "models/objects_MG/008_pudding_box/008_pudding_box.usd"
+        pos: [-0.1, -0.1, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0, 0, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  c04:
+    task_class: "single_obj"
+    instruction: "pick up the banana"
+    objects:
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0.0, 0.0, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "005_tomato_soup_can"
+        object_path: "models/objects_MG/005_tomato_soup_can/005_tomato_soup_can.usd"
+        pos: [0.2, 0.03, 0.05]
+        rot: [1.0, 0.0, 1.0, 0c.0]
+
+      - name: "Razer_Taipan_Black_Ambidextrous_Gaming_Mouse"
+        object_path: "models/objects_MG/Razer_Taipan_Black_Ambidextrous_Gaming_Mouse/Razer_Taipan_Black_Ambidextrous_Gaming_Mouse.usd"
+        pos: [-0.02, -0.02, 0.12]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "5_HTP"
+        object_path: "models/objects_MG/5_HTP/5_HTP.usd"
+        pos: [0.02, 0.05, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "BlackBlack_Nintendo_3DSXL"
+        object_path: "models/objects_MG/BlackBlack_Nintendo_3DSXL/BlackBlack_Nintendo_3DSXL.usd"
+        pos: [-0.1, 0.0, 0.04]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  c05:
+    task_class: "clutter"
+    instruction: "pick up the blue bowl from the stack"
+    objects:
+      - name: "Sea_to_Summit_Xl_Bowl"
+        object_path: "models/objects_MG/Sea_to_Summit_Xl_Bowl/Sea_to_Summit_Xl_Bowl.usd"
+        pos: [0.05, 0.1, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+ 
+      - name: "Orbit_Bubblemint_Mini_Bottle_6_ct"
+        object_path: "models/objects_MG/Orbit_Bubblemint_Mini_Bottle_6_ct/Orbit_Bubblemint_Mini_Bottle_6_ct.usd"
+        pos: [0.05, 0.1, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+ 
+      - name: "009_gelatin_box"
+        object_path: "models/objects_MG/009_gelatin_box/009_gelatin_box.usd"
+        pos: [-0.15, 0.15, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+ 
+      - name: "5_HTP"
+        object_path: "models/objects_MG/5_HTP/5_HTP.usd"
+        pos: [0.1, 0.0, 0.02]
+        rot: [0.707, 0.0, 0.707, 0.0]
+ 
+      - name: "BlackBlack_Nintendo_3DSXL"
+        object_path: "models/objects_MG/BlackBlack_Nintendo_3DSXL/BlackBlack_Nintendo_3DSXL.usd"
+        pos: [0.0, -0.05, 0.03]
+        rot: [0.92, 0.0, 0.0, 0.38]
+ 
+      - name: "Schleich_Hereford_Bull"
+        object_path: "models/objects_MG/Schleich_Hereford_Bull/Schleich_Hereford_Bull.usd"
+        pos: [-0.1, -0.1, 0.02]
+        rot: [0.0, 0.0, 0.0, 1.0]
+
+  c06:
+    task_class: "single_obj"
+    instruction: " pick up the scissors"
+    objects:
+
+      - name: "025_mug"
+        object_path: "models/objects_MG/025_mug/025_mug.usd"
+        pos: [0.08, 0.03, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "037_scissors"
+        object_path: "models/objects_MG/037_scissors/037_scissors.usd"
+        pos: [-0.08, -0.1, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "5_HTP"
+        object_path: "models/objects_MG/5_HTP/5_HTP.usd"
+        pos: [0.3, 0.3, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "BlackBlack_Nintendo_3DSXL"
+        object_path: "models/objects_MG/BlackBlack_Nintendo_3DSXL/BlackBlack_Nintendo_3DSXL.usd"
+        pos: [-0.1, 0.0, 0.04]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+################################################### constrained in bin #########################################################
+
+  d01:
+    task_class: "single_obj"
+    instruction: "pick up the banana"
+    objects:
+      - name: "025_mug"
+        object_path: "models/objects_MG/025_mug/025_mug.usd"
+        pos: [0.08, 0.03, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "5_HTP"
+        object_path: "models/objects_MG/5_HTP/5_HTP.usd"
+        pos: [0.0, -0.15, 0.06]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "BlackBlack_Nintendo_3DSXL"
+        object_path: "models/objects_MG/BlackBlack_Nintendo_3DSXL/BlackBlack_Nintendo_3DSXL.usd"
+        pos: [-0.1, 0.0, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0.0, 0.0, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Xyli_Pure_Xylitol"
+        object_path: "models/objects_MG/Xyli_Pure_Xylitol/Xyli_Pure_Xylitol.usd"
+        pos: [0.0, 0.1, 0.12]
+        rot: [1.0, 0.0, 1.0, 0.0]
+
+      - name: "Razer_Taipan_Black_Ambidextrous_Gaming_Mouse"
+        object_path: "models/objects_MG/Razer_Taipan_Black_Ambidextrous_Gaming_Mouse/Razer_Taipan_Black_Ambidextrous_Gaming_Mouse.usd"
+        pos: [-0.02, -0.02, 0.14]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+  d02:
+    task_class: "single_obj"
+    instruction: " pick up the tape"
+    objects:
+      - name: "3M_Antislip_Surfacing_Light_Duty_White"
+        object_path: "models/objects_MG/3M_Antislip_Surfacing_Light_Duty_White/3M_Antislip_Surfacing_Light_Duty_White.usd"
+        pos: [-0.08, -0.1, 0.04]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Android_Figure_Chrome"
+        object_path: "models/objects_MG/Android_Figure_Chrome/Android_Figure_Chrome.usd"
+        pos: [0.0, -0.15, 0.06]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "ASICS_GEL1140V_WhiteBlackSilver"
+        object_path: "models/objects_MG/ASICS_GEL1140V_WhiteBlackSilver/ASICS_GEL1140V_WhiteBlackSilver.usd"
+        pos: [-0.05, 0.0, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Big_O_Sponges_Assorted_Cellulose_12_pack"
+        object_path: "models/objects_MG/Big_O_Sponges_Assorted_Cellulose_12_pack/Big_O_Sponges_Assorted_Cellulose_12_pack.usd"
+        pos: [0.0, 0.15, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      # - name: "Aroma_Stainless_Steel_Milk_Frother_2_Cup"
+      #   object_path: "models/objects_MG/Aroma_Stainless_Steel_Milk_Frother_2_Cup/Aroma_Stainless_Steel_Milk_Frother_2_Cup.usd"
+      #   pos: [0.0, 0.1, 0.12]
+      #   rot: [1.0, 0.0, 1.0, 0.0]
+
+      - name: "Android_Figure_Panda"
+        object_path: "models/objects_MG/Android_Figure_Panda/Android_Figure_Panda.usd"
+        pos: [-0.02, -0.02, 0.14]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+  d03:
+    task_class: "single_obj"
+    instruction: " pick up the Nintendo"
+    objects:
+      - name: "Schleich_Hereford_Bull"
+        object_path: "models/objects_MG/Schleich_Hereford_Bull/Schleich_Hereford_Bull.usd"
+        pos: [0.08, 0.03, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+      - name: "Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold"
+        object_path: "models/objects_MG/Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold/Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold.usd"
+        pos: [0.0, -0.15, 0.06]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Super_Mario_3D_World_Deluxe_Set"
+        object_path: "models/objects_MG/Super_Mario_3D_World_Deluxe_Set/Super_Mario_3D_World_Deluxe_Set.usd"
+        pos: [-0.05, 0.0, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Sea_to_Summit_Xl_Bowl"
+        object_path: "models/objects_MG/Sea_to_Summit_Xl_Bowl/Sea_to_Summit_Xl_Bowl.usd"
+        pos: [0.0, 0.15, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "BlackBlack_Nintendo_3DSXL"
+        object_path: "models/objects_MG/BlackBlack_Nintendo_3DSXL/BlackBlack_Nintendo_3DSXL.usd"
+        pos: [-0.0, 0.0, 0.18]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "008_pudding_box"
+        object_path: "models/objects_MG/008_pudding_box/008_pudding_box.usd"
+        pos: [-0.1, 0.0, 0.20]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  d04:
+    task_class: "single_obj"
+    instruction: " pick up the bowl"
+    objects:
+      - name: "Womens_Betty_Chukka_Boot_in_Grey_Jersey_Sequin"
+        object_path: "models/objects_MG/Womens_Betty_Chukka_Boot_in_Grey_Jersey_Sequin/Womens_Betty_Chukka_Boot_in_Grey_Jersey_Sequin.usd"
+        pos: [0.08, 0.03, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Swiss_Miss_Hot_Cocoa_KCups_Milk_Chocolate_12_count"
+        object_path: "models/objects_MG/Swiss_Miss_Hot_Cocoa_KCups_Milk_Chocolate_12_count/Swiss_Miss_Hot_Cocoa_KCups_Milk_Chocolate_12_count.usd"
+        pos: [-0.08, -0.1, 0.04]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "House_of_Cards_The_Complete_First_Season_4_Discs_DVD"
+        object_path: "models/objects_MG/House_of_Cards_The_Complete_First_Season_4_Discs_DVD/House_of_Cards_The_Complete_First_Season_4_Discs_DVD.usd"
+        pos: [0.0, -0.15, 0.06]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Super_Mario_3D_World_Deluxe_Set"
+        object_path: "models/objects_MG/Super_Mario_3D_World_Deluxe_Set/Super_Mario_3D_World_Deluxe_Set.usd"
+        pos: [-0.05, 0.0, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Beyonc_Life_is_But_a_Dream_DVD"
+        object_path: "models/objects_MG/Beyonc_Life_is_But_a_Dream_DVD/Beyonc_Life_is_But_a_Dream_DVD.usd"
+        pos: [0.0, 0.15, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Canon_225226_Ink_Cartridges_BlackColor_Cyan_Magenta_Yellow_6_count"
+        object_path: "models/objects_MG/Canon_225226_Ink_Cartridges_BlackColor_Cyan_Magenta_Yellow_6_count/Canon_225226_Ink_Cartridges_BlackColor_Cyan_Magenta_Yellow_6_count.usd"
+        pos: [0.0, 0.1, 0.12]
+        rot: [1.0, 0.0, 1.0, 0.0]
+
+      - name: "Ecoforms_Pot_Nova_6_Turquoise"
+        object_path: "models/objects_MG/Ecoforms_Pot_Nova_6_Turquoise/Ecoforms_Pot_Nova_6_Turquoise.usd"
+        pos: [-0.02, -0.02, 0.14]
+        rot: [1.0, 0.0, 0.0, 0.0]    
+      
+
+  d05:
+    task_class: "single_obj"
+    instruction: " pick up the bowl"
+    objects:
+      - name: "Cole_Hardware_Saucer_Electric"
+        object_path: "models/objects_MG/Cole_Hardware_Saucer_Electric/Cole_Hardware_Saucer_Electric.usd"
+        pos: [0.08, 0.03, 0.02]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Kotobuki_Saucer_Dragon_Fly"
+        object_path: "models/objects_MG/Kotobuki_Saucer_Dragon_Fly/Kotobuki_Saucer_Dragon_Fly.usd"
+        pos: [-0.08, -0.1, 0.04]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "NAPA_VALLEY_NAVAJO_SANDAL"
+        object_path: "models/objects_MG/NAPA_VALLEY_NAVAJO_SANDAL/NAPA_VALLEY_NAVAJO_SANDAL.usd"
+        pos: [0.0, -0.15, 0.06]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Nikon_1_AW1_w11275mm_Lens_Silver"
+        object_path: "models/objects_MG/Nikon_1_AW1_w11275mm_Lens_Silver/Nikon_1_AW1_w11275mm_Lens_Silver.usd"
+        pos: [-0.05, 0.0, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Sapota_Threshold_4_Ceramic_Round_Planter_Red"
+        object_path: "models/objects_MG/Sapota_Threshold_4_Ceramic_Round_Planter_Red/Sapota_Threshold_4_Ceramic_Round_Planter_Red.usd"
+        pos: [0.0, 0.15, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "Ubisoft_RockSmith_Real_Tone_Cable_Xbox_360"
+        object_path: "models/objects_MG/Ubisoft_RockSmith_Real_Tone_Cable_Xbox_360/Ubisoft_RockSmith_Real_Tone_Cable_Xbox_360.usd"
+        pos: [0.0, 0.1, 0.12]
+        rot: [1.0, 0.0, 1.0, 0.0]
+
+      - name: "Threshold_Bead_Cereal_Bowl_White"
+        object_path: "models/objects_MG/Threshold_Bead_Cereal_Bowl_White/Threshold_Bead_Cereal_Bowl_White.usd"
+        pos: [-0.02, -0.02, 0.14]
+        rot: [1.0, 0.0, 0.0, 0.0] 
+
+
+
+################################# constrained in basket #########################################################
+  e01:
+    task_class: "balance"
+    instruction: " pick up the gelatin box from the basket"
+    scene_type: "simple_table"
+    objects:
+      - name: "009_gelatin_box"
+        object_path: "models/objects_MG/009_gelatin_box/009_gelatin_box.usd"
+        pos: [0.0, 0.0, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Curver_Storage_Bin_Black_Small"
+        object_path: "models/objects_MG/Curver_Storage_Bin_Black_Small/Curver_Storage_Bin_Black_Small.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  e02:
+    task_class: "balance"
+    object_name: "cup"
+    instruction: "pick up the mustard bottle from the basket"
+    scene_type: "simple_table"
+    objects:
+      - name: "002_master_chef_can"
+        object_path: "models/objects_MG/002_master_chef_can/002_master_chef_can.usd"
+        pos: [0.08, 0.05, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "006_mustard_bottle"
+        object_path: "models/objects_MG/006_mustard_bottle/006_mustard_bottle.usd"
+        pos: [0.0, 0.0, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Curver_Storage_Bin_Black_Small"
+        object_path: "models/objects_MG/Curver_Storage_Bin_Black_Small/Curver_Storage_Bin_Black_Small.usd"
+        pos: [0.0, 0.0, -0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  e03:
+    task_class: "balance"
+    object_name: "cup"
+    instruction: "pick up the mustard bottle"
+    # instruction: "Grasp the mustard bottle from the basket"
+    scene_type: "simple_table"
+    objects:
+      - name: "Nescafe_Tasters_Choice_Instant_Coffee_Decaf_House_Blend_Light_7_oz"
+        object_path: "models/objects_MG/Nescafe_Tasters_Choice_Instant_Coffee_Decaf_House_Blend_Light_7_oz/Nescafe_Tasters_Choice_Instant_Coffee_Decaf_House_Blend_Light_7_oz.usd"
+        pos: [0.08, 0.05, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "006_mustard_bottle"
+        object_path: "models/objects_MG/006_mustard_bottle/006_mustard_bottle.usd"
+        pos: [0.0, 0.0, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Curver_Storage_Bin_Black_Small"
+        object_path: "models/objects_MG/Curver_Storage_Bin_Black_Small/Curver_Storage_Bin_Black_Small.usd"
+        pos: [0.0, 0.0, -0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  e04:
+    task_class: "balance"
+    object_name: "cup"
+    instruction: "pick up the mustard bottle"
+    # instruction: "Grasp the mustard bottle from the basket"
+    scene_type: "simple_table"
+    objects:
+      - name: "005_tomato_soup_can"
+        object_path: "models/objects_MG/005_tomato_soup_can/005_tomato_soup_can.usd"
+        pos: [0.08, 0.05, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "006_mustard_bottle"
+        object_path: "models/objects_MG/006_mustard_bottle/006_mustard_bottle.usd"
+        pos: [0.0, 0.0, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Curver_Storage_Bin_Black_Small"
+        object_path: "models/objects_MG/Curver_Storage_Bin_Black_Small/Curver_Storage_Bin_Black_Small.usd"
+        pos: [0.0, 0.0, -0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+        
+  e05:
+    task_class: "balance"
+    object_name: "cup"
+    instruction: "pick up the cleanser bottle"
+    # instruction: "Grasp the mustard bottle from the basket"
+    scene_type: "simple_table"
+    objects:
+      - name: "002_master_chef_can"
+        object_path: "models/objects_MG/002_master_chef_can/002_master_chef_can.usd"
+        pos: [0.08, 0.05, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "021_bleach_cleanser"
+        object_path: "models/objects_MG/021_bleach_cleanser/021_bleach_cleanser.usd"
+        pos: [0.0, 0.0, 0.1]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Curver_Storage_Bin_Black_Small"
+        object_path: "models/objects_MG/Curver_Storage_Bin_Black_Small/Curver_Storage_Bin_Black_Small.usd"
+        pos: [0.0, 0.0, -0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  
+###################### balance object #########################
+
+  f010:
+    task_class: "balance"
+    object_name: "hold_cup"
+    instruction: "pick up the mug"
+    instruction_2: " pick up the cup at the handle"
+    instruction_3: "pass me the cup with the water" # keep the cup's orientation
+    objects:
+      - name: "Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White"
+        object_path: "models/objects_MG/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "balanced"
+  f011:
+    task_class: "balance"
+    object_name: "hold_cup"
+    # instruction: "pick up the mug"
+    instruction: "pick up the cup at the handle"
+    # instruction_3: "pass me the cup with the water" # keep the cup's orientation
+    objects:
+      - name: "Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White"
+        object_path: "models/objects_MG/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "balanced"
+
+  f021:
+    task_class: "balance"
+    object_name: "hold_cup"
+    instruction: "pick up the mug with water"
+    objects:
+      - name: "Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White"
+        object_path: "models/objects_MG/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "balanced"
+
+  f012:
+    task_class: "balance"
+    object_name: "square_plate"
+    instruction: "pick up the plate"
+    instruction_2: " pick up the plate at the edge"
+    instruction_3: " pick up the plate with the food" # keep the plate's orientation and  pick up 
+    objects:
+      - name: "Threshold_Dinner_Plate_Square_Rim_White_Porcelain"
+        object_path: "models/objects_MG/Threshold_Dinner_Plate_Square_Rim_White_Porcelain/Threshold_Dinner_Plate_Square_Rim_White_Porcelain.usd"
+        pos: [0.06, 0.06, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  f020:
+    task_class: "balance"
+    object_name: "square_plate"
+    instruction: "pick up the plate"
+    # instruction: "grasp a plate with stuff in side"
+    # instruction_3: " pick up the plate with the food" # keep the plate's orientation and  pick up 
+    objects:
+      - name: "Threshold_Dinner_Plate_Square_Rim_White_Porcelain"
+        object_path: "models/objects_MG/Threshold_Dinner_Plate_Square_Rim_White_Porcelain/Threshold_Dinner_Plate_Square_Rim_White_Porcelain.usd"
+        pos: [0.06, 0.06, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+
+  f021:
+    task_class: "balance"
+    object_name: "square_plate"
+    instruction: " pick up the plate"
+    instruction_2: " pick up the plate at the edge"
+    instruction_3: " pick up the plate with the food" # keep the plate's orientation and  pick up 
+    objects:
+      - name: "Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring"
+        object_path: "models/objects_MG/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "base"
+      - name: "BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup"
+        object_path: "models/objects_MG/BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup/BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "balanced"
+
+  f030:
+    task_class: "balance"
+    object_name: "hold_pan"
+    instruction: "pick up the bowl of food"
+    instruction_2: " pick up the pan at the handle"
+    instruction_3: " pick up the pan with the food" # keep the pan's orientation
+    objects:
+      - name: "Now_Designs_Bowl_Akita_Black"
+        object_path: "models/objects_MG/Now_Designs_Bowl_Akita_Black/Now_Designs_Bowl_Akita_Black.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  f040:
+    task_class: "balance"
+    object_name: "hold_tray"
+    instruction: " pick up the tray"
+    instruction_2: " pick up the tray at the edge and keep balance"
+    instruction_3: " pick up the tray with other objects in side" # keep the tray's orientation
+    objects:
+      - name: "Threshold_Tray_Rectangle_Porcelain"
+        object_path: "models/objects_MG/Threshold_Tray_Rectangle_Porcelain/Threshold_Tray_Rectangle_Porcelain.usd"
+        pos: [0.0, 0.0, 0.005]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "balanced"
+      - name: "002_master_chef_can"
+        object_path: "models/objects_MG/002_master_chef_can/002_master_chef_can.usd"
+        pos: [0.00, 0.0, 0.08]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  f050:
+    task_class: "balance"
+    object_name: "hold_pan"
+    instruction: " pick up the pan"
+    instruction_2: " pick up the pan at the handle and keep balance"
+    instruction_3: " pick up the pan with other objects in side" # keep the pan's orientation
+    objects:
+      - name: "Chefmate_8_Frypan"
+        object_path: "models/objects_MG/Chefmate_8_Frypan/Chefmate_8_Frypan.usd"
+        pos: [0.05, 0.1, 0.01]
+        rot: [1.0, 0.0, 0.0, 1.0]
+  f051:
+    task_class: "balance"
+    object_name: "hold_pan"
+    instruction: " pick up the pan"
+    instruction_2: " pick up the pan at the handle and keep balance"
+    instruction_3: " pick up the pan with other objects in side" # keep the pan's orientation
+    objects:
+      - name: "Chefmate_8_Frypan"
+        object_path: "models/objects_MG/Chefmate_8_Frypan/Chefmate_8_Frypan.usd"
+        pos: [0.05, 0.1, 0.01]
+        rot: [1.0, 0.0, 0.0, 1.0]
+      - name: "BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup"
+        object_path: "models/objects_MG/BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup/BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup.usd"
+        pos: [0.00, 0.00, 0.07]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "Now_Designs_Bowl_Akita_Black"
+        object_path: "models/objects_MG/Now_Designs_Bowl_Akita_Black/Now_Designs_Bowl_Akita_Black.usd"
+        pos: [0.0, 0.0, 0.06]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+
+  e06:
+    task_class: "balance"
+    object_name: "plate"
+    description: "plate cannot keep balance "
+    scene_type: "simple_table"
+    objects:
+      - name: "Lenovo_Yoga_2_11"
+        object_path: "models/objects_MG/Lenovo_Yoga_2_11/Lenovo_Yoga_2_11.usd"
+        pos: [0.00, 0.00, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+  e06:
+    task_class: "balance"
+    object_name: "cup_on_plate"
+    instruction: " pick up the cup on the plate"
+    scene_type: "medium_table"
+    objects:
+      - name: "Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring"
+        object_path: "models/objects_MG/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "base"
+      - name: "BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup"
+        object_path: "models/objects_MG/BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup/BIA_Porcelain_Ramekin_With_Glazed_Rim_35_45_oz_cup.usd"
+        pos: [0.0, 0.0, 0.01]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        role: "balanced"
+  #####################single object ###################
+  z01:
+    task_class: "single_obj"
+    instruction: "pick up the banana"
+    objects:
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  
+  z02:
+    task_class: "single_obj"
+    instruction: "pick up a cup of water"
+    instruction_2: " pick up the cup at the handle"
+    instruction_3: "pass me the cup with the water" # keep the cup's orientation
+    objects:
+      - name: "Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White"
+        object_path: "models/objects_MG/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z03:
+    task_class: "single_obj"
+    instruction: "pick up the mug"
+    objects:
+      - name: "Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White"
+        object_path: "models/objects_MG/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  
+  z04:
+    task_class: "single_obj"
+    instruction: "pick up the mastard bottle"
+    objects:
+      - name: "006_mustard_bottle"
+        object_path: "models/objects_MG/006_mustard_bottle/006_mustard_bottle.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z05:
+    task_class: "single_obj"
+    instruction: "pick up the cleanser"
+    objects:
+      - name: "021_bleach_cleanser"
+        object_path: "models/objects_MG/021_bleach_cleanser/021_bleach_cleanser.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z06:
+    task_class: "single_obj"
+    instruction: "pick up the box"
+    objects:
+      - name: "008_pudding_box"
+        object_path: "models/objects_MG/008_pudding_box/008_pudding_box.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  
+  z07:
+    task_class: "single_obj"
+    instruction: "pick up the bowl"
+    objects:
+      - name: "024_bowl"
+        object_path: "models/objects_MG/024_bowl/024_bowl.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z08:
+    task_class: "single_obj"
+    instruction: "pick up the mug"
+    objects:
+      - name: "025_mug"
+        object_path: "models/objects_MG/025_mug/025_mug.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+  z09:
+    task_class: "single_obj"
+    instruction: "pick up the mug"
+    objects:
+      - name: "Cole_Hardware_Mug_Classic_Blue"
+        object_path: "models/objects_MG/Cole_Hardware_Mug_Classic_Blue/Cole_Hardware_Mug_Classic_Blue.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z10:
+    task_class: "single_obj"
+    instruction: "pick up the ramekin"
+    objects:
+      - name: "45oz_RAMEKIN_ASST_DEEP_COLORS"
+        object_path: "models/objects_MG/45oz_RAMEKIN_ASST_DEEP_COLORS/45oz_RAMEKIN_ASST_DEEP_COLORS.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z11:
+    task_class: "single_obj"
+    instruction: "pick up the drill"
+    objects:
+      - name: "035_power_drill"
+        object_path: "models/objects_MG/035_power_drill/035_power_drill.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  z12:
+    task_class: "single_obj"
+    instruction: "pick up the cup on handle"
+    objects:
+      - name: "Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White"
+        object_path: "models/objects_MG/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White/Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+####################################################### complex shape ##########################
+  y01:
+    task_class: "single_obj"
+    instruction: "pick up the toy"
+    objects:
+      - name: "3D_Dollhouse_Happy_Brother"
+        object_path: "models/objects_MG/3D_Dollhouse_Happy_Brother/3D_Dollhouse_Happy_Brother.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+  
+  y02:
+    task_class: "single_obj"
+    instruction: "pick up the toy lamp"
+    objects:
+      - name: "objects_MG/3D_Dollhouse_Lamp"
+        object_path: "models/objects_MG/3D_Dollhouse_Lamp/3D_Dollhouse_Lamp.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+        
+  y03:
+    task_class: "single_obj"
+    instruction: "pick up the toy sofa"
+    objects:
+      - name: "objects_MG/3D_Dollhouse_Sofa"
+        object_path: "models/objects_MG/3D_Dollhouse_Sofa/3D_Dollhouse_Sofa.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  y04:
+    task_class: "single_obj"
+    instruction: "pick up the toy bead"
+    objects:
+      - name: "objects_MG/LADYBUG_BEAD"
+        object_path: "models/objects_MG/LADYBUG_BEAD/LADYBUG_BEAD.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+  y05:
+    task_class: "single_obj"
+    instruction: "pick up the hat"
+    objects:
+      - name: "objects_MG/DPC_Handmade_Hat_Brown"
+        object_path: "models/objects_MG/DPC_Handmade_Hat_Brown/DPC_Handmade_Hat_Brown.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+
+######################################################### CLUTTER #########################################################
+
+#
+
+
+
+############################ stack objects ###########################
+  e01:
+    task_class: "stack"
+    object_name: "bowl"
+    instruction: " pick up the top bowl"
+    objects:
+      - name: "024_bowl"
+        object_path: "models/objects_MG/024_bowl/024_bowl.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+
+  e02:
+    task_class: "stack"
+    object_name: "plate"
+    description: "Stack plate"
+    scene_type: "medium_table"
+    objects:
+      - name: "Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring"
+        object_path: "models/objects_MG/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring/Threshold_Bistro_Ceramic_Dinner_Plate_Ruby_Ring.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+
+
+  e03:
+    task_class: "stack"
+    object_name: "Tray"
+    instruction: " pick up the the knife from the cup"
+    scene_type: "medium_table"
+    objects:
+      - name: "Threshold_Tray_Rectangle_Porcelain"
+        object_path: "models/objects_MG/Threshold_Tray_Rectangle_Porcelain/Threshold_Tray_Rectangle_Porcelain.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+
+  e04:
+    task_class: "stack"
+    object_name: "Tray"
+    instruction: " pick up the inside bowl"
+    scene_type: "medium_table"
+    objects:
+      - name: "Threshold_Tray_Rectangle_Porcelain"
+        object_path: "models/objects_MG/Threshold_Tray_Rectangle_Porcelain/Threshold_Tray_Rectangle_Porcelain.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+    diff: [0.0, 0.0, 0.05]
+  e05:
+    task_class: "stack"
+    object_name: "Tray"
+    instruction: " pick up the the spoon from the bowl"
+    scene_type: "medium_table"
+    # objects:
+    #   - name: "Threshold_Tray_Rectangle_Porcelain"
+    #     object_path: "models/objects_MG/Threshold_Tray_Rectangle_Porcelain/Threshold_Tray_Rectangle_Porcelain.usd"
+    #     pos: [0.0, 0.0, 0.0]
+    #     rot: [1.0, 0.0, 0.0, 0.0]
+    # diff: [0.0, 0.0, 0.05]
+  k01:
+    task_class: "single_obj"
+    instruction: "pick up the banana"
+    objects:
+      - name: "tray"
+        object_path: "models/small_KLT_visual.usd"
+        pos: [0.0, 0.0, 0.0]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "011_banana"
+        object_path: "models/objects_MG/011_banana/011_banana.usd"
+        pos: [0, 0, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+      - name: "006_mustard_bottle"
+        object_path: "models/objects_MG/006_mustard_bottle/006_mustard_bottle.usd"
+        pos: [0.08, 0.03, 0.05]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+      - name: "008_pudding_box"
+        object_path: "models/objects_MG/Now_Designs_Bowl_Akita_Black/Now_Designs_Bowl_Akita_Black.usd"
+        pos: [-0.06, -0.05, 0.03]
+        rot: [1.0, 0.0, 0.0, 0.0]
+
+
+######################################################## balance #################################################################
+
+ 
+
+        # ############################ after icra #########################################################

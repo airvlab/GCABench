@@ -1,0 +1,20 @@
+# Note: These files are kept for development purposes only.
+
+# Ignore all other files
+.python.env
+datasets/*
+logs/*
+datasets_test/
+datasets_baseline/*
+*.hdf5
+*.parquet
+*.json
+*.csv
+*.txt
+*.log
+*.log.gz
+*.log.gz.part
+*.log.gz.part.1
+*.log.gz.part.2
+*.log.gz.part.3
+*.log.gz.part.4
