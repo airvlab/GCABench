@@ -110,12 +110,12 @@ Tasks are defined in [`tasks/config.yaml`](tasks/config.yaml). Select a scene wi
 
 Scenes are grouped by workspace structure and the kind of reasoning they require, not by gripper. Object pose and placement are varied within each family (for example, a bowl upright vs. upside down).
 
-| Scene type | Count | Task IDs | Description |
-| :--- | ---: | :--- | :--- |
-| **Singulated** | 26 | `a*`, `g*`, `z*` | Grasp and lift a single object on a flat table. Covers common / YCB objects (`z*`), thin or flat objects that are hard to grasp (`a*`), and irregular shapes such as toys (`g*`). |
-| **Cluttered** | 16 | `b*`, `c*` | Grasp a target among overlapping or stacked objects. Subtypes below increase occlusion and collision risk. |
-| **Constrained** | 10 | `d*`, `e*` | Grasp inside a limited workspace (bin or basket). Requires precise approach, collision avoidance, and reaching into corners or against walls. |
-| **Semantic** | 11 | `f*` | Task-level context beyond geometry: keep a cup, plate, tray, or pan balanced (no spillage), prefer a handle or edge, or retrieve an object without disturbing its contents. |
+| Scene type | Task IDs | Description |
+| :--- | :--- | :--- |
+| **Singulated** | `a*`, `g*`, `z*` | Grasp and lift a single object on a flat table. Covers common / YCB objects (`z*`), thin or flat objects that are hard to grasp (`a*`), and irregular shapes such as toys (`g*`). |
+| **Cluttered** | `b*`, `c*` | Grasp a target among overlapping or stacked objects. Subtypes below increase occlusion and collision risk. |
+| **Constrained** | `d*`, `e*` | Grasp inside a limited workspace (bin or basket). Requires precise approach, collision avoidance, and reaching into corners or against walls. |
+| **Semantic** | `f*` | Task-level context beyond geometry: keep a cup, plate, tray, or pan balanced (no spillage), prefer a handle or edge, or retrieve an object without disturbing its contents. |
 
 **Cluttered subtypes**
 
