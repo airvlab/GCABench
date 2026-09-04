@@ -2,6 +2,9 @@
 
 This repository provides a benchmark and toolkit for collecting and evaluating robotic grasping demonstrations with complex trajectories using **Isaac Lab**.
 
+**Paper:** [Beyond Visual Grasping: Benchmarking Complex Grasping from Detection to Execution](https://arxiv.org/abs/2607.14341) (IROS 2026)  
+**Project page:** [https://airvlab.github.io/GCA-Bench/](https://airvlab.github.io/GCA-Bench/)
+
 ---
 
 ## 🐳 Docker Quick Start (Recommended)
@@ -261,6 +264,21 @@ For detailed device configuration, see the [IsaacLab device documentation](https
 
 ---
 
-## 📄 License
+## 📄 Citation
 
-[License Information Here]
+If you find this work useful, please cite:
+
+```bibtex
+@inproceedings{zhang2026gcabench,
+  title={Beyond Visual Grasping: Benchmarking Complex Grasping from Detection to Execution},
+  author={Zhang, Hanyi and Nguyen, Khang and Munasinghe, Charith and Hela, Basu and Li, Tianyu and Luo, Zihong and Nguyen, Hoan and van de Venn, Hans Wernher and Zheng, Yalin and Prakash, Ravi and Ta, Tung D. and Nguyen, Anh and Huang, Baoru},
+  year={2026},
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  eprint={2607.14341},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2607.14341}
+}
+```
+
+---
