@@ -34,3 +34,8 @@ realworld_data/*.hdf5
 *.json
 *.json
 datasets_baseline/
+
+# Local test scripts
+robot_test.py
+simple_test.py
+
