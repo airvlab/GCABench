@@ -57,7 +57,7 @@ python record_demos.py --teleop_device keyboard --num_demos 10 --task_id a01
 
 ---
 
-## 📦 Local Installation (Alternative)
+## 📦 Local Installation
 
 If you prefer to run the environment locally without Docker, follow these steps.
 
@@ -132,14 +132,14 @@ Closed-loop evaluation queries a remote policy server, executes the predicted ac
 
 ### Policy clients
 
-| Policy | Client | Default server |
+| Policy | Client | 
 | :--- | :--- | :--- |
-| OpenPI / π0 | `client/Openpi_client_img.py` | `--host 0.0.0.0 --port 5000` |
-| OpenPI (multi-task) | `client/multitask_eval.py` | `--host 0.0.0.0 --port 5000` |
-| GR00T | `client/gr00t_client.py` | `--host localhost --port 4000` |
-| OpenVLA | `client/Openvla_client_img.py` | `--host localhost --port 6001` |
-| OpenVLA-OFT | `client/Openvla-oft_client_img.py` | `--host localhost --port 8777` |
-| GraspVLA | `client/GraspVLA_Client.py` | `--graspvla_port 6666` |
+| OpenPI / π0 | `client/Openpi_client_img.py` |
+| OpenPI (multi-task) | `client/multitask_eval.py` |
+| GR00T | `client/gr00t_client.py` |
+| OpenVLA | `client/Openvla_client_img.py` | 
+| OpenVLA-OFT | `client/Openvla-oft_client_img.py` | 
+| GraspVLA | `client/GraspVLA_Client.py` |
 
 ### Run evaluation
 
@@ -180,17 +180,15 @@ Robot environments are registered in `grasp_env/__init__.py`. Select one via `--
 | **UR10 long suction** | `Grasp-UR10-Long-Suction-IK-Rel-img` |
 | **UR10 parallel gripper** | `Grasp-UR10-Parallel-IK-Rel-img` |
 | **Kinova Gen3 (J2N7S300)** | `Grasp-Kinova-J2N75300-IK-Rel-img` |
-Suction / vacuum envs automatically force `--device cpu` in `record_demos.py` for physics stability.
-
 ---
 
 ## 📋 Tasks
 
-Tasks are defined in [`tasks/config.yaml`](tasks/config.yaml). Select a scene with `--task_id` (e.g. `--task_id a01`). There are currently **63** tasks.
+Tasks are defined in [`tasks/config.yaml`](tasks/config.yaml). Select a scene with `--task_id` (e.g. `--task_id a01`).
 
 ### Scene types
 
-Scenes are grouped by workspace structure and the kind of reasoning they require, not by gripper. Object pose and placement are varied within each family (for example, a bowl upright vs. upside down).
+We include 4 different type of complex grasping tasks as shown below:
 
 | Scene type | Task IDs | Description |
 | :--- | :--- | :--- |
@@ -198,14 +196,6 @@ Scenes are grouped by workspace structure and the kind of reasoning they require
 | **Cluttered** | `b*`, `c*` | Grasp a target among overlapping or stacked objects. Subtypes below increase occlusion and collision risk. |
 | **Constrained** | `d*`, `e*` | Grasp inside a limited workspace (bin or basket). Requires precise approach, collision avoidance, and reaching into corners or against walls. |
 | **Semantic** | `f*` | Task-level context beyond geometry: keep a cup, plate, tray, or pan balanced (no spillage), prefer a handle or edge, or retrieve an object without disturbing its contents. |
-
-**Cluttered subtypes**
-
-| Subtype | IDs | Description |
-| :--- | :--- | :--- |
-| Scattered | `c01`–`c06` | Objects are spread across the workspace with some spacing. |
-| Stacked | `b01`–`b10` | Objects are piled tightly, with occlusion and a higher chance of knocking neighbors. |
-| Packed | e.g. `b06`–`b09` | Objects are packed along an axis with little clearance for gripper insertion. |
 
 
 ### Creating Custom Tasks
