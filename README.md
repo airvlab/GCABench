@@ -1,4 +1,4 @@
-# Grasp with Complex Trajectory Benchmark
+# GCA-Bench: Beyond Visual Grasping: Benchmarking Complex Grasping from Detection to Execution
 
 This repository provides a benchmark and toolkit for collecting and evaluating robotic grasping demonstrations with complex trajectories using **Isaac Lab**.
 
